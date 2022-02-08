@@ -1,10 +1,10 @@
-
 <div class="container">
     <div class=child>
-        <b>Username: </b>
-        <app-textbox [boxName]="'Username'"></app-textbox>
-        <span><b>Password:</b><a style="float: right;" href="#">Forgot Password</a></span>
-        <app-textbox [boxName]="'Password'"></app-textbox>
+        <label for="username">Username</label>
+        <app-textbox id="username" [boxName]="'Username'" ></app-textbox>
+        <label for="username">Password</label>
+        <a style="float: right;" href="#">Forgot Password</a>
+        <app-textbox id="password" [boxName]="'Password'" required></app-textbox>
         <app-button [title]="'Login'" [className]="'btn btn-primary'" [styleSpecs]="'width:100%; margin-top:5px'">
         </app-button>
     </div> 
