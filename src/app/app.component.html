@@ -13,8 +13,9 @@
         <app-button [className]="'btn btn-dark'" [title]="'For Teams'" [styleSpecs]="'margin:2px'"></app-button>
       </ul>
           <app-textbox [boxName]="'Search'"></app-textbox>
-          <app-button [className]="'btn btn-primary'" [title]="'Login'" [styleSpecs]="'margin:2px'"></app-button>
-          <app-button [className]="'btn btn-success'" [title]="'Sign Up'" [styleSpecs]="'margin:2px'"></app-button>
+          <app-button *ngIf="!isLogin" (click)="loginHandler($event)" [className]="'btn btn-primary'" [title]="'Login'" [styleSpecs]="'margin:2px'"></app-button>
+          <app-button *ngIf="isLogin" (click)="logoutHandler($event)" [className]="'btn btn-primary'" [title]="'LogOut'" [styleSpecs]="'margin:2px'"></app-button>
+          <app-button  *ngIf="!isLogin" (click)="loginHandler($event)" [className]="'btn btn-success'" [title]="'Sign Up'" [styleSpecs]="'margin:2px'"></app-button>
     </div>
   </div>
 </nav>

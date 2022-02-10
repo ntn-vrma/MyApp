@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MyApp';
+  isLogin=false;
+  loginHandler(text:Event){
+    console.log(text)
+    this.isLogin=true    
+  }
+  logoutHandler(text:Event){
+    console.log(text)
+    this.isLogin=false 
+
+  }
 }
+
