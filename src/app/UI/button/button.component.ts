@@ -9,6 +9,8 @@ export class ButtonComponent {
   @Input() title="My Button"
   @Input() className=""
   @Input() styleSpecs=""
+  @Input() type=""
+  @Input() disabled=false;
   @Output() clicked=new EventEmitter();
   constructor() { }
   onClickHandler(){

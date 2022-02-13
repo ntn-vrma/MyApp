@@ -1,1 +1,1 @@
-<input type="search" class="form-control" placeholder={{boxName}}/>
+<input [type]=type [(ngModel)]="texboxData" (change)="onChange($event)" class="form-control" placeholder={{boxName}}/>

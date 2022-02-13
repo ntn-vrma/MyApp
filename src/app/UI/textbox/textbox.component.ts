@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-textbox',
@@ -8,4 +8,13 @@ import { Component, Input } from '@angular/core';
 export class TextboxComponent {
 
   @Input() boxName=''
+  @Input() type=''
+  texboxData=''
+  //  @Input() ngClassName=''
+  // @Input() classBit=false
+  @Output() texboxEvent= new EventEmitter<string>();
+  onChange(event:any){
+    this.texboxEvent.emit(this.texboxData);
+    
+  }
 }

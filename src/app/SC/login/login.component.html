@@ -1,11 +1,14 @@
 <div class="container">
     <div class=child>
-        <label for="username">Username</label>
-        <app-textbox id="username" [boxName]="'Username'" ></app-textbox>
-        <label for="username">Password</label>
-        <a style="float: right;" href="#">Forgot Password</a>
-        <app-textbox id="password" [boxName]="'Password'" required></app-textbox>
-        <app-button [title]="'Login'" [className]="'btn btn-primary'" [styleSpecs]="'width:100%; margin-top:5px'">
-        </app-button>
+        
+            <label for="username">Username</label>
+            <app-textbox (change)="getUsername($event)"  id="username" [boxName]="'Username'" ></app-textbox>
+            <label for="username">Password</label>
+            <a style="float: right;" href="#">Forgot Password</a>
+            <app-textbox (blur)="isFieldPasswordValid()" (change)="getPassword($event)" [type]="'password'" id="password" [boxName]="'Password'" required></app-textbox>
+            <app-button [title]="'Login'" [disabled]="!isValid()" [type]="'button'" [className]="'btn btn-primary'" [styleSpecs]="'width:100%; margin-top:5px'">
+            </app-button>
     </div> 
 </div>
+<!-- [classBit]="!isFieldPasswordValid()" -->
+<!-- [(username)]="getUsername($event)"  -->
