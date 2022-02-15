@@ -1,1 +1,1 @@
-<input [type]=type [(ngModel)]="texboxData" (change)="onChange($event)" class="form-control" placeholder={{boxName}}/>
+<input [type]=type [(ngModel)]="textboxData" [ngClass]="{'red':!classBit,'blue':classBit}" (change)="onChange($event)" placeholder={{boxName}}/>

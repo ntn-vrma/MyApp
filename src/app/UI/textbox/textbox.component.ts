@@ -9,12 +9,12 @@ export class TextboxComponent {
 
   @Input() boxName=''
   @Input() type=''
-  texboxData=''
+  textboxData=''
   //  @Input() ngClassName=''
-  // @Input() classBit=false
+   @Input() classBit:Boolean=true
   @Output() texboxEvent= new EventEmitter<string>();
   onChange(event:any){
-    this.texboxEvent.emit(this.texboxData);
-    
+    this.texboxEvent.emit(this.textboxData);
+    console.log(this.classBit)
   }
 }
