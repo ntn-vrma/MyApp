@@ -8,14 +8,20 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        <app-button [className]="'btn btn-dark'" [title]="'About'" [styleSpecs]="'margin:2px'"></app-button>
-        <app-button [className]="'btn btn-dark'" [title]="'Products'" [styleSpecs]="'margin:2px'"></app-button>
-        <app-button [className]="'btn btn-dark'" [title]="'For Teams'" [styleSpecs]="'margin:2px'"></app-button>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">For Teams</a>
+        </li>
       </ul>
-          <app-textbox [boxName]="'Search'"></app-textbox>
-          <app-button *ngIf="!isLogin" (click)="loginHandler($event)" [className]="'btn btn-primary'" [title]="'Login'" [styleSpecs]="'margin:2px'"></app-button>
-          <app-button *ngIf="isLogin" (click)="logoutHandler($event)" [className]="'btn btn-primary'" [title]="'LogOut'" [styleSpecs]="'margin:2px'"></app-button>
-          <app-button  *ngIf="!isLogin" (click)="loginHandler($event)" [className]="'btn btn-success'" [title]="'Sign Up'" [styleSpecs]="'margin:2px'"></app-button>
+          <app-textbox [textSpecs]="searchBox"></app-textbox>
+          <app-button *ngIf="!isLogin" (click)="loginHandler($event)" [buttonSpecs]="loginButton"></app-button>
+          <app-button *ngIf="isLogin" (click)="logoutHandler($event)" [buttonSpecs]="logoutButton"></app-button>
+          <app-button  *ngIf="!isLogin" (click)="loginHandler($event)" [buttonSpecs]="signUpButton"></app-button>
     </div>
   </div>
 </nav>

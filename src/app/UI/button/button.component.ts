@@ -11,6 +11,9 @@ export class ButtonComponent {
   @Input() styleSpecs=""
   @Input() type=""
   @Input() disabled=false;
+  @Input() usernameValues:any={};
+  @Input() passwordValues:any={};
+  @Input() buttonSpecs:any={};
   @Output() clicked=new EventEmitter();
   constructor() { }
   onClickHandler(){

@@ -1,2 +1,1 @@
-<button type="type" [disabled]="disabled" (click)="onClickHandler()"  [class]=className [style]=styleSpecs>{{title}}</button>
-<!-- <input [(ngModel)]=title type="text"/> -->
+<button [type]="buttonSpecs.type" [disabled]="!(usernameValues.valid && passwordValues.valid)" (click)="onClickHandler()"  [class]=buttonSpecs.buttonClass [style]=buttonSpecs.style>{{buttonSpecs.name}}</button>

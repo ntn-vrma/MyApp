@@ -15,7 +15,24 @@ export class AppComponent {
   logoutHandler(text:Event){
     console.log(text)
     this.isLogin=false 
-
+  }
+  searchBox={
+    placeholder:'Search',
+  } 
+  loginButton={
+    name:'Login',
+    buttonClass:'btn btn-primary',
+    style:'margin:2px'
+  }
+  logoutButton={
+    name:'Logout',
+    buttonClass:'btn btn-primary',
+    style:'margin:2px'
+  }
+  signUpButton={
+    name:'Sign Up',
+    buttonClass:'btn btn-success',
+    style:'margin:2px'
   }
 }
 

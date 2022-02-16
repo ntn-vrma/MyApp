@@ -8,13 +8,16 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class TextboxComponent {
 
   @Input() boxName=''
-  @Input() type=''
+  @Input() textSpecs:any={};
+  ngOnInit(){
+    console.log(typeof(this.textSpecs))
+  }
   textboxData=''
   //  @Input() ngClassName=''
    @Input() classBit:Boolean=true
   @Output() texboxEvent= new EventEmitter<string>();
-  onChange(event:any){
-    this.texboxEvent.emit(this.textboxData);
-    console.log(this.classBit)
-  }
+  // onChange(event:any){
+  //   this.texboxEvent.emit(this.textboxData);
+  //   console.log(this.classBit)
+  // }
 }
