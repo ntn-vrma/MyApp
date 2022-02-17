@@ -19,9 +19,9 @@
         </li>
       </ul>
           <app-textbox [textSpecs]="searchBox"></app-textbox>
-          <app-button *ngIf="!isLogin" (click)="loginHandler($event)" [buttonSpecs]="loginButton"></app-button>
-          <app-button *ngIf="isLogin" (click)="logoutHandler($event)" [buttonSpecs]="logoutButton"></app-button>
-          <app-button  *ngIf="!isLogin" (click)="loginHandler($event)" [buttonSpecs]="signUpButton"></app-button>
+          <app-button *ngIf="!isLogin" (clicked)="loginHandler($event)" [buttonSpecs]="loginButton"></app-button>
+          <app-button *ngIf="isLogin" (clicked)="logoutHandler($event)" [buttonSpecs]="logoutButton"></app-button>
+          <app-button  *ngIf="!isLogin" (clicked)="loginHandler($event)" [buttonSpecs]="signUpButton"></app-button>
     </div>
   </div>
 </nav>

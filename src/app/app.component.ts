@@ -22,17 +22,20 @@ export class AppComponent {
   loginButton={
     name:'Login',
     buttonClass:'btn btn-primary',
-    style:'margin:2px'
+    style:'margin:2px',
+    disable:true
   }
   logoutButton={
     name:'Logout',
     buttonClass:'btn btn-primary',
-    style:'margin:2px'
+    style:'margin:2px',
+    disable:true
   }
   signUpButton={
     name:'Sign Up',
     buttonClass:'btn btn-success',
-    style:'margin:2px'
+    style:'margin:2px',
+    disable:true
   }
 }
 

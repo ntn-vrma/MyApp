@@ -1,10 +1,10 @@
 <div class="container">
     <div class=child>
-        <form>
-            <label for="username">Username</label>
+        <form (submit)=onSubmit()>
+            <label for="username"><strong>Username</strong></label>
             <app-textbox [textSpecs]=usernameValues></app-textbox>
-            <br/>
-             <label for="username">Password</label>
+            <br/><br/>
+             <label for="username"><strong>Password</strong></label>
             <a style="float: right;" href="#">Forgot Password</a>
              <app-textbox [textSpecs]=passwordValues></app-textbox>
              <app-button [buttonSpecs]="buttonSpecs" [usernameValues]="usernameValues" [passwordValues]="passwordValues"> </app-button>  

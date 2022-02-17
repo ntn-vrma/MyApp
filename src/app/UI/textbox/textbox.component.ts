@@ -13,8 +13,7 @@ export class TextboxComponent {
     console.log(typeof(this.textSpecs))
   }
   textboxData=''
-  //  @Input() ngClassName=''
-   @Input() classBit:Boolean=true
+  @Input() classBit:Boolean=true
   @Output() texboxEvent= new EventEmitter<string>();
   // onChange(event:any){
   //   this.texboxEvent.emit(this.textboxData);
