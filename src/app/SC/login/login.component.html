@@ -2,12 +2,12 @@
     <div class=child>
         <form (submit)=onSubmit()>
             <label for="username"><strong>Username</strong></label>
-            <app-textbox [textSpecs]=usernameValues></app-textbox>
+            <app-textbox [textSpecs]=username></app-textbox>
             <br/><br/>
              <label for="username"><strong>Password</strong></label>
             <a style="float: right;" href="#">Forgot Password</a>
-             <app-textbox [textSpecs]=passwordValues></app-textbox>
-             <app-button [buttonSpecs]="buttonSpecs" [usernameValues]="usernameValues" [passwordValues]="passwordValues"> </app-button>  
+             <app-textbox [textSpecs]=password></app-textbox>
+             <app-button [buttonSpecs]="buttonSpecs" [usernameValues]="username" [passwordValues]="password"> </app-button>  
         </form>
             
     </div> 

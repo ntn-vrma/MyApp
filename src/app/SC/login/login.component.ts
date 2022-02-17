@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent {
 
 
-  usernameValues={
+  username={
     value:'',
     placeholder:'Username',
     type:'text',
@@ -31,7 +31,7 @@ export class LoginComponent {
     }
   };
 
-  passwordValues={
+  password={
     value:'',
     placeholder:'Password',
     type:'password',
@@ -57,14 +57,14 @@ export class LoginComponent {
   buttonSpecs={
     type:'submit',
     name:'Login',
-    disable: (this.passwordValues.valid && this.usernameValues.valid),
+    disable: (this.password.valid && this.username.valid),
     // disable: (this.passwordValues.valid && this.usernameValues.valid),
     buttonClass:'btn btn-primary',
     style:'width:100%; margin-top:5px'
   }
 
   onSubmit(){
-    if((this.usernameValues.isValid() && this.passwordValues.isValid()))
+    if((this.username.isValid() && this.password.isValid()))
     {
       alert("Submitted")
     }
