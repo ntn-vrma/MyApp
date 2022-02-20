@@ -1,27 +1,2 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">For Teams</a>
-        </li>
-      </ul>
-          <app-textbox [textSpecs]="searchBox"></app-textbox>
-          <app-button *ngIf="!isLogin" (clicked)="loginHandler($event)" [buttonSpecs]="loginButton">Login</app-button>
-          <app-button *ngIf="isLogin" (clicked)="logoutHandler($event)" [buttonSpecs]="logoutButton">Logout</app-button>
-          <app-button  *ngIf="!isLogin" (clicked)="loginHandler($event)" [buttonSpecs]="signUpButton">Signup</app-button>
-    </div>
-  </div>
-</nav>
-<app-login></app-login> -->
 <app-header (headerEvent)="eventHandler($event)" [isLogin]="isLogin"></app-header>
 <app-login></app-login>
