@@ -2,9 +2,10 @@
     border-color: red;
 }
 input {
-    width: 100%;
-    padding: 12px 10px;
+    padding: 7px 10px;
+    margin-top: 4px;
     border-radius: 5px;
+    border-color: black;
   }
 .blue{
       border-color: rgb(52, 138, 219);

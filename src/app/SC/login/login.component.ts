@@ -28,7 +28,8 @@ export class LoginComponent {
       }
       this.valid=result
       return result;
-    }
+    },
+    style:'width: 100%'
   };
 
   password={
@@ -52,13 +53,13 @@ export class LoginComponent {
       this.valid=result
       return result;
     },
+    style:'width: 100%'
   };
 
   buttonSpecs={
     type:'submit',
     name:'Login',
     disable: (this.password.valid && this.username.valid),
-    // disable: (this.passwordValues.valid && this.usernameValues.valid),
     buttonClass:'btn btn-primary',
     style:'width:100%; margin-top:5px'
   }

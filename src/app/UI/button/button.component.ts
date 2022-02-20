@@ -12,7 +12,7 @@ export class ButtonComponent {
   @Output() clicked=new EventEmitter();
   constructor() { }
   onClickHandler(){
-    this.clicked.emit("clicked");
+    this.clicked.emit();
   }
 
 

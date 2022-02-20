@@ -12,11 +12,4 @@ export class TextboxComponent {
   ngOnInit(){
     console.log(typeof(this.textSpecs))
   }
-  textboxData=''
-  @Input() classBit:Boolean=true
-  @Output() texboxEvent= new EventEmitter<string>();
-  // onChange(event:any){
-  //   this.texboxEvent.emit(this.textboxData);
-  //   console.log(this.classBit)
-  // }
 }

@@ -1,2 +1,3 @@
 <!-- <button [type]="buttonSpecs.type" [disabled]="!(usernameValues.valid && passwordValues.valid)" (click)="onClickHandler()"  [class]=buttonSpecs.buttonClass [style]=buttonSpecs.style>{{buttonSpecs.name}}</button> -->
-<button [type]="buttonSpecs.type" [disabled]=!buttonSpecs.disable (click)="onClickHandler()"  [class]=buttonSpecs.buttonClass [style]=buttonSpecs.style>{{buttonSpecs.name}}</button>
+<button [type]="buttonSpecs.type" [disabled]=!buttonSpecs.disable (click)="onClickHandler()" 
+[class]=buttonSpecs.buttonClass [style]=buttonSpecs.style><ng-content></ng-content></button>

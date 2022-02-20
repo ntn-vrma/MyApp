@@ -8,17 +8,22 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'MyApp';
   isLogin=false;
-  loginHandler(text:Event){
-    console.log(text)
-    this.isLogin=true    
+  eventHandler(eve:any){
+    switch(eve.type){
+      case 'LOGIN':
+        this.isLogin=true  
+        break;
+      case 'LOGOUT':
+        this.isLogin=false  
+        break;
+      case 'SIGNUP':
+        this.isLogin=true
+        break;
+    }
   }
-  logoutHandler(text:Event){
-    console.log(text)
-    this.isLogin=false 
-  }
-  searchBox={
-    placeholder:'Search',
-  } 
+  
+
+
   loginButton={
     name:'Login',
     buttonClass:'btn btn-primary',
