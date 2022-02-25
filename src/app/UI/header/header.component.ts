@@ -42,6 +42,6 @@ export class HeaderComponent{
       }
       searchBox={
         placeholder:'Search..',
-        style: 'width:50%;height:50%;margin-top:5px',
+        style: 'width:50%;height:100%;margin-top:5px',
       }
 }

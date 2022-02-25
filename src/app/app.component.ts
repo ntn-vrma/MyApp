@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { userStatus } from './services/Validation/userStatus';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +10,19 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'MyApp';
   isLogin=false;
+  constructor(private _loggedIn:userStatus,private router:Router){
+    this._loggedIn.isValid.subscribe((res:any)=>{
+      this.isLogin=res
+    })
+  }
   eventHandler(eve:any){
     switch(eve.type){
       case 'LOGIN':
-        this.isLogin=true  
+        // this.isLogin=true  
+        this.router.navigateByUrl('/login');
         break;
       case 'LOGOUT':
-        this.isLogin=false  
+        this._loggedIn.isValid.next(false)
         break;
       case 'SIGNUP':
         this.isLogin=true
@@ -22,8 +30,6 @@ export class AppComponent {
     }
   }
   
-
-
   loginButton={
     name:'Login',
     buttonClass:'btn btn-primary',

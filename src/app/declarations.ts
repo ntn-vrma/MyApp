@@ -1,4 +1,5 @@
 import { ButtonComponent, LinksComponent, TextboxComponent, HeaderComponent } from './UI';
+import { AboutComponent, TeamsComponent, ProductsComponent, DashboardComponent} from './landing';
 import { LoginComponent } from './SC/login/login.component';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +15,11 @@ export const components=[
     TextboxComponent,
     LoginComponent,
     HeaderComponent,
-    LinksComponent
+    LinksComponent,
+    AboutComponent,
+    TeamsComponent,
+    DashboardComponent,
+    ProductsComponent
 ]
 
 export const imports=[

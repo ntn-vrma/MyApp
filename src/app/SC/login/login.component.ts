@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { userStatus } from 'src/app/services/Validation/userStatus';
+
 
 @Component({
   selector: 'app-login',
@@ -6,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  userStatus=false;
+  constructor(private _userStatus:userStatus,private router:Router){
+    this._userStatus.isValid.subscribe((res:any)=>{
+      this.userStatus=res;
+    })
 
+  }
 
   username={
     value:'',
@@ -16,9 +25,9 @@ export class LoginComponent {
     name:'username',
     msg:'',
     isValid:function(){
-      let result=true
-      if(this.value.trim().length<1){
-        this.msg='Username is required!'
+    let result=true
+    if(this.value.trim().length<1){
+      this.msg='Username is required!'
         result=false
       }
       else if(this.value.trim().length<8)
@@ -59,18 +68,21 @@ export class LoginComponent {
   buttonSpecs={
     type:'submit',
     name:'Login',
-    disable: (this.password.valid && this.username.valid),
+    disable:(this.password.valid && this.username.valid),
     buttonClass:'btn btn-primary',
-    style:'width:100%; margin-top:5px'
+    style:'width:100%; margin-top:5px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)'
   }
 
   onSubmit(){
+    let status=false;
     if((this.username.isValid() && this.password.isValid()))
     {
-      alert("Submitted")
+      status=true
+      this.router.navigateByUrl('/dashboard')
     }
     else{
-      alert("Please enter valid credentials!")
+      status=false
     }
+    this._userStatus.isValid.next(status)
   }
 }
