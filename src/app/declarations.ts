@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { UserCollectionComponent } from './landing/dashboard/item/itemCollection.component';
+import { UserItemComponent } from './landing/dashboard/item/item.component';
 
 
 
@@ -19,11 +23,15 @@ export const components=[
     AboutComponent,
     TeamsComponent,
     DashboardComponent,
-    ProductsComponent
+    ProductsComponent,
+    UserCollectionComponent,
+    UserItemComponent
 ]
 
 export const imports=[
+    CommonModule,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule
 ]

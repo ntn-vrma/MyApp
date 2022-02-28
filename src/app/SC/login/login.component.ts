@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { userStatus } from 'src/app/services/Validation/userStatus';
 
+import { HttpClient }  from '@angular/common/http'
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,13 @@ import { userStatus } from 'src/app/services/Validation/userStatus';
 })
 export class LoginComponent {
   userStatus=false;
-  constructor(private _userStatus:userStatus,private router:Router){
+
+  errorMessage = '';
+
+  constructor(private _userStatus:userStatus,
+    private router:Router,
+    private _http: HttpClient
+    ){
     this._userStatus.isValid.subscribe((res:any)=>{
       this.userStatus=res;
     })
@@ -74,15 +82,26 @@ export class LoginComponent {
   }
 
   onSubmit(){
-    let status=false;
+   
     if((this.username.isValid() && this.password.isValid()))
     {
-      status=true
-      this.router.navigateByUrl('/dashboard')
-    }
-    else{
-      status=false
-    }
-    this._userStatus.isValid.next(status)
+      this._http.post('https://reqres.in/api/login',{
+        "email": this.username.value,
+        "password": this.password.value
+    })
+    .pipe(take(1))
+    .subscribe( 
+        (response:any)=>{
+            this.errorMessage = '';
+            this._userStatus.setToken(response.token);
+           this.router.navigateByUrl('/dashboard')
+           this._userStatus.isValid.next(true);
+        }, 
+        (err)=>{
+            this.errorMessage = err.error.error;
+        }  
+    )
+  }
+
   }
 }

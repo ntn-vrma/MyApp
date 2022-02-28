@@ -5,5 +5,11 @@ import { Subject } from "rxjs";
 export class userStatus{
 
     isValid=new Subject<boolean>();
+
+    token : string = '';
+
+    setToken(token: string) {
+            this.token = token;
+    }
     
 }
